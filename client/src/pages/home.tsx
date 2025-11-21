@@ -113,7 +113,7 @@ export default function Home() {
                  SCANNING TARGETS...
                </div>
                <div className="w-48 h-1 bg-white/10 overflow-hidden">
-                 <div className="h-full bg-secondary w-[60%] animate-pulse"></div>
+                 <div className="h-full bg-secondary animate-scan-fill"></div>
                </div>
              </div>
 
