@@ -278,23 +278,6 @@ export default function Home() {
                     <Badge variant="outline" className="border-secondary/30 text-secondary bg-secondary/5">March 2018</Badge>
                   </div>
                 </div>
-
-                <div className="bg-white/5 border border-white/10 p-6 hover:border-primary/50 transition-colors group">
-                   <div className="flex justify-between items-start mb-4">
-                    <h4 className="text-white font-bold">Achievements</h4>
-                    <Activity className="w-5 h-5 text-primary" />
-                  </div>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-center gap-2">
-                      <span className="w-1 h-1 bg-primary rounded-full"></span>
-                      HackTheBox – Hacker Rank
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-1 h-1 bg-primary rounded-full"></span>
-                      TryHackMe – Top 2% Global Rank
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -326,6 +309,39 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   <Award className={`w-6 h-6 ${item.color}`} />
                   <h3 className="text-lg text-white font-bold font-mono">{item.cert}</h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Achievements Section */}
+        <section className="space-y-12">
+          <div className="flex items-end justify-between border-b border-white/10 pb-4">
+            <div>
+              <h2 className="text-3xl text-white mb-2">SYSTEM RANKINGS</h2>
+              <p className="text-muted-foreground font-mono text-sm">/// PLATFORM_ACHIEVEMENTS</p>
+            </div>
+            <div className="font-mono text-accent text-xl">05</div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { title: "HackTheBox", rank: "Hacker Rank", icon: Zap, color: "text-primary" },
+              { title: "TryHackMe", rank: "Top 2% Global", icon: Activity, color: "text-secondary" }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/5 border border-white/10 p-8 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10 flex items-start gap-4">
+                  <item.icon className={`w-8 h-8 ${item.color} flex-shrink-0 mt-1`} />
+                  <div>
+                    <h3 className="text-xl text-white font-bold font-mono mb-2">{item.title}</h3>
+                    <p className={`text-lg font-bold ${item.color}`}>{item.rank}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
