@@ -152,9 +152,9 @@ export default function Home() {
                 border: "border-secondary/20 hover:border-secondary"
               },
               {
-                title: "SOC_MONITORING",
-                icon: Activity,
-                desc: "Incident response, log analysis (Splunk/Wazuh), and threat detection in real-time environments.",
+                title: "MOBILE_SECURITY",
+                icon: Lock,
+                desc: "Android pentesting and mobile application security assessments. Identifying vulnerabilities in mobile platforms.",
                 color: "text-accent",
                 border: "border-accent/20 hover:border-accent"
               },
@@ -166,9 +166,9 @@ export default function Home() {
                 border: "border-primary/20 hover:border-primary"
               },
               {
-                title: "MOBILE_SECURITY",
-                icon: Lock,
-                desc: "Android pentesting and mobile application security assessments. Identifying vulnerabilities in mobile platforms.",
+                title: "SOC_MONITORING",
+                icon: Activity,
+                desc: "Incident response, log analysis (Splunk/Wazuh), and threat detection in real-time environments.",
                 color: "text-secondary",
                 border: "border-secondary/20 hover:border-secondary"
               }
