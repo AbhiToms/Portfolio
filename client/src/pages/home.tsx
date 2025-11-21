@@ -35,13 +35,17 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = Date.now();
-      const cycle = (now % 20000) / 20000;
+      const cycle = (now % 19000) / 19000;
       let percent;
-      if (cycle < 0.5) {
-        percent = cycle * 200;
+      
+      if (cycle < 10/19) {
+        percent = (cycle / (10/19)) * 100;
+      } else if (cycle < 14/19) {
+        percent = 100 - ((cycle - 10/19) / (4/19)) * 50;
       } else {
-        percent = 100 - (cycle - 0.5) * 100;
+        percent = 50 + ((cycle - 14/19) / (5/19)) * 50;
       }
+      
       setScanPercent(Math.floor(Math.min(100, Math.max(0, percent))));
     }, 16);
     return () => clearInterval(interval);
