@@ -227,7 +227,7 @@ export default function Home() {
 
                 {/* Project 2 */}
                 <div className="relative group">
-                  <div className="absolute -left-[37px] top-0 w-4 h-4 bg-white/20 rounded-full border-4 border-black group-hover:bg-secondary group-hover:shadow-[0_0_10px_var(--color-secondary)] transition-all duration-300"></div>
+                  <div className="absolute -left-[37px] top-0 w-4 h-4 bg-secondary rounded-full border-4 border-black group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_var(--color-secondary)]"></div>
                   <h4 className="text-xl text-white font-bold mb-1">SOC Log Analysis</h4>
                   <p className="text-sm text-muted-foreground font-mono mb-2">Splunk, Windows Event Logs</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -237,7 +237,7 @@ export default function Home() {
 
                 {/* Project 3 */}
                 <div className="relative group">
-                  <div className="absolute -left-[37px] top-0 w-4 h-4 bg-white/20 rounded-full border-4 border-black group-hover:bg-accent group-hover:shadow-[0_0_10px_var(--color-accent)] transition-all duration-300"></div>
+                  <div className="absolute -left-[37px] top-0 w-4 h-4 bg-accent rounded-full border-4 border-black group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_var(--color-accent)]"></div>
                   <h4 className="text-xl text-white font-bold mb-1">Vulnerable Lab Setup</h4>
                   <p className="text-sm text-muted-foreground font-mono mb-2">Kali Linux, Metasploitable2, Nmap</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
