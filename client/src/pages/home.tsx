@@ -35,7 +35,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = Date.now();
-      const cycle = (now % 12000) / 12000;
+      const cycle = (now % 20000) / 20000;
       let percent;
       if (cycle < 0.5) {
         percent = cycle * 200;
