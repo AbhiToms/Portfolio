@@ -355,7 +355,7 @@ export default function Home() {
           <div className="col-span-1 md:col-span-2">
             <h4 className="text-white mb-4 text-lg font-display">ABHINAV THOMAS</h4>
             <p className="text-muted-foreground max-w-xs">
-              Security Researcher specializing in VAPT, SOC Analysis, Web App Security, and Malware Analysis.
+              Security Researcher specializing in VAPT, Soc Analysis, Web App Security, and Malware Analysis, etc.
             </p>
           </div>
           
