@@ -336,10 +336,10 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10 flex items-start gap-3 md:gap-4">
-                  <item.icon className={`w-6 h-6 md:w-8 md:h-8 ${item.color} flex-shrink-0 mt-1`} />
+                  <item.icon className={`w-4 h-4 md:w-5 md:h-5 ${item.color} flex-shrink-0 mt-0.5`} />
                   <div>
-                    <h3 className="text-lg md:text-xl text-white font-bold font-mono mb-1 md:mb-2">{item.title}</h3>
-                    <p className={`text-base md:text-lg font-bold ${item.color}`}>{item.rank}</p>
+                    <h3 className="text-sm md:text-base text-white font-bold font-mono mb-0.5 md:mb-1">{item.title}</h3>
+                    <p className={`text-xs md:text-sm font-bold ${item.color}`}>{item.rank}</p>
                   </div>
                 </div>
               </motion.div>
