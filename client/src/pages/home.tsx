@@ -164,6 +164,13 @@ export default function Home() {
                 desc: "Dissecting malicious software to understand behavior and impact on systems.",
                 color: "text-primary",
                 border: "border-primary/20 hover:border-primary"
+              },
+              {
+                title: "MOBILE_SECURITY",
+                icon: Lock,
+                desc: "Android pentesting and mobile application security assessments. Identifying vulnerabilities in mobile platforms.",
+                color: "text-secondary",
+                border: "border-secondary/20 hover:border-secondary"
               }
             ].map((item, i) => (
               <motion.div
