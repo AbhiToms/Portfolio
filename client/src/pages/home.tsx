@@ -90,7 +90,9 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4">
               <CyberButton variant="primary">Initialize Protocol</CyberButton>
-              <CyberButton variant="secondary">Download Keys</CyberButton>
+              <a href="https://www.linkedin.com/in/abhitoms" target="_blank" rel="noreferrer">
+                <CyberButton variant="secondary">Connect on LinkedIn</CyberButton>
+              </a>
             </div>
           </div>
 
@@ -126,33 +128,40 @@ export default function Home() {
           <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
               <h2 className="text-3xl text-white mb-2">ACTIVE MODULES</h2>
-              <p className="text-muted-foreground font-mono text-sm">/// SELECT_ATTACK_VECTOR</p>
+              <p className="text-muted-foreground font-mono text-sm">/// CORE_COMPETENCIES</p>
             </div>
-            <div className="font-mono text-accent text-xl">03</div>
+            <div className="font-mono text-accent text-xl">02</div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "VAPT_SERVICES",
-                icon: Globe,
-                desc: "Comprehensive Vulnerability Assessment and Penetration Testing for critical infrastructure.",
+                title: "VAPT",
+                icon: Shield,
+                desc: "Vulnerability Assessment & Penetration Testing. Systematic review of security weaknesses in information systems.",
                 color: "text-primary",
                 border: "border-primary/20 hover:border-primary"
               },
               {
-                title: "WEB_&_MOBILE",
-                icon: Wifi,
-                desc: "Securing web applications and mobile platforms against modern attack vectors and exploits.",
+                title: "WEB_SECURITY",
+                icon: Globe,
+                desc: "Securing web applications against OWASP Top 10 vulnerabilities, XSS, SQLi, and logic flaws.",
                 color: "text-secondary",
                 border: "border-secondary/20 hover:border-secondary"
               },
               {
                 title: "MALWARE_ANALYSIS",
                 icon: Code,
-                desc: "Deep dive reverse engineering and analysis of malicious software artifacts and threats.",
+                desc: "Dissecting malicious software to understand its behavior, origin, and impact on systems.",
                 color: "text-accent",
                 border: "border-accent/20 hover:border-accent"
+              },
+              {
+                title: "MOBILE_SEC",
+                icon: Zap,
+                desc: "Security testing for iOS and Android applications, identifying insecure storage and API vulnerabilities.",
+                color: "text-primary",
+                border: "border-primary/20 hover:border-primary"
               }
             ].map((item, i) => (
               <motion.div
@@ -176,6 +185,39 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        {/* Experience / Education Placeholder */}
+        <section className="space-y-12">
+           <div className="flex items-end justify-between border-b border-white/10 pb-4">
+            <div>
+              <h2 className="text-3xl text-white mb-2">SYSTEM LOGS</h2>
+              <p className="text-muted-foreground font-mono text-sm">/// EXPERIENCE_&_EDUCATION</p>
+            </div>
+            <div className="font-mono text-accent text-xl">03</div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="border-l-2 border-primary/30 pl-8 relative">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_var(--color-primary)]"></div>
+              <h3 className="text-2xl text-white font-display">SECURITY RESEARCHER</h3>
+              <p className="text-primary font-mono text-sm mb-2">CURRENT_ROLE // PRESENT</p>
+              <p className="text-muted-foreground max-w-2xl">
+                Conducting advanced vulnerability assessments and penetration testing for diverse clients. 
+                Specializing in web application security and malware analysis.
+              </p>
+            </div>
+
+             <div className="border-l-2 border-secondary/30 pl-8 relative">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-secondary rounded-full shadow-[0_0_10px_var(--color-secondary)]"></div>
+              <h3 className="text-2xl text-white font-display">EDUCATION / CERTIFICATION</h3>
+              <p className="text-secondary font-mono text-sm mb-2">ACADEMIC_RECORD</p>
+              <p className="text-muted-foreground max-w-2xl">
+                Focus on Computer Science and Cybersecurity. 
+                (Add your specific degree or university here)
+              </p>
+            </div>
           </div>
         </section>
 
