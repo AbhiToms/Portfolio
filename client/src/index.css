@@ -164,6 +164,6 @@
   }
 
   .animate-scan-fill {
-    animation: scan-fill 2s ease-in-out infinite;
+    animation: scan-fill 6s ease-in-out infinite;
   }
 }
