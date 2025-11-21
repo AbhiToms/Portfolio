@@ -99,27 +99,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-4"
-      >
-        {[
-          { label: "CVEs FOUND", value: "14", icon: Bug },
-          { label: "BOUNTIES COLLECTED", value: "$45,000+", icon: Shield },
-          { label: "SYSTEMS AUDITED", value: "120+", icon: Network },
-        ].map((stat, index) => (
-          <div key={index} className="border border-primary/30 bg-primary/5 p-6 flex items-center justify-between hover:border-primary hover:bg-primary/10 transition-colors group">
-            <div>
-              <div className="text-xs text-muted-foreground mb-1 tracking-widest">{stat.label}</div>
-              <div className="text-3xl font-bold text-primary group-hover:text-white transition-colors">{stat.value}</div>
-            </div>
-            <stat.icon className="w-8 h-8 text-primary/50 group-hover:text-primary transition-colors" />
-          </div>
-        ))}
-      </motion.div>
 
       {/* Services (Attack Vectors) */}
       <section>
@@ -179,50 +158,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hall of Fame */}
-      <section>
-        <div className="flex items-center gap-4 mb-8">
-          <h2 className="text-2xl font-bold text-primary">HALL_OF_FAME</h2>
-          <Separator className="flex-1 bg-primary/30" />
-        </div>
-
-        <div className="space-y-4">
-          {[
-            { id: "CVE-2024-8892", target: "OpenSource CMS", severity: "CRITICAL", type: "RCE" },
-            { id: "HackerOne", target: "Fortune 500 Tech Corp", severity: "HIGH", type: "IDOR" },
-            { id: "Bugcrowd", target: "Financial Inst.", severity: "MEDIUM", type: "Subdomain Takeover" },
-            { id: "CVE-2023-1024", target: "IoT Device Firmware", severity: "CRITICAL", type: "Buffer Overflow" }
-          ].map((item, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="border-l-2 border-primary/30 pl-4 py-2 hover:border-primary hover:bg-primary/5 transition-all group cursor-pointer"
-            >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                <div className="flex items-center gap-3">
-                  <Skull className="w-4 h-4 text-primary/50 group-hover:text-primary" />
-                  <span className="font-bold text-lg text-white group-hover:text-primary transition-colors">{item.id}</span>
-                  <span className="text-muted-foreground">// {item.target}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className={`text-xs px-2 py-1 font-bold ${
-                    item.severity === "CRITICAL" ? "bg-red-900/30 text-red-500" : 
-                    item.severity === "HIGH" ? "bg-orange-900/30 text-orange-500" : 
-                    "bg-yellow-900/30 text-yellow-500"
-                  }`}>
-                    [{item.severity}]
-                  </span>
-                  <span className="text-sm text-primary/70">{item.type}</span>
-                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* Footer / CLI */}
       <footer className="fixed bottom-0 left-0 w-full bg-black/90 backdrop-blur border-t border-primary/30 p-2 z-50">
