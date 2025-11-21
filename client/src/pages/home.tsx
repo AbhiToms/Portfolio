@@ -36,28 +36,25 @@ export default function Home() {
     const interval = setInterval(() => {
       const now = Date.now();
       const cycle = (now % 19000) / 19000;
-      let percent;
+      let percent = 0;
       
-      if (cycle < 10/19) {
-        // Fill 0% to 100% with slowdown after 80%
+      const stage1End = 10/19;
+      const stage2End = 14/19;
+      const stage3End = 17/19;
+      
+      if (cycle < stage1End) {
         if (cycle < 8/19) {
-          // 0-8s: Fill 0% → 80% (fast)
           percent = (cycle / (8/19)) * 80;
         } else {
-          // 8-10s: Fill 80% → 100% (slow)
           percent = 80 + ((cycle - 8/19) / (2/19)) * 20;
         }
-      } else if (cycle < 14/19) {
-        // Reverse 100% → 50%
-        percent = 100 - ((cycle - 10/19) / (4/19)) * 50;
+      } else if (cycle < stage2End) {
+        percent = 100 - ((cycle - stage1End) / (stage2End - stage1End)) * 50;
       } else {
-        // Fill 50% to 100% with slowdown after 80%
-        if (cycle < 14/19 + 3/19) {
-          // 50-80% (fast)
-          percent = 50 + ((cycle - 14/19) / (3/19)) * 30;
+        if (cycle < stage3End) {
+          percent = 50 + ((cycle - stage2End) / (stage3End - stage2End)) * 30;
         } else {
-          // 80-100% (slow)
-          percent = 80 + ((cycle - (14/19 + 3/19)) / (2/19)) * 20;
+          percent = 80 + ((cycle - stage3End) / (1 - stage3End)) * 20;
         }
       }
       
