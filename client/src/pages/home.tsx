@@ -68,7 +68,8 @@ export default function Home() {
         </header>
 
         {/* Hero Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
+          <div className="absolute top-0 left-0 font-mono text-accent text-sm opacity-50">/// SECTION_01_INITIALIZATION</div>
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase">
               <Activity className="w-3 h-3" />
@@ -134,7 +135,7 @@ export default function Home() {
             <div className="font-mono text-accent text-xl">02</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 title: "ETHICAL_HACKING",
@@ -293,7 +294,7 @@ export default function Home() {
             <div className="font-mono text-accent text-xl">04</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { cert: "Certified Ethical Hacker v12", color: "text-primary" },
               { cert: "Adv. Diploma Cyber Defence", color: "text-secondary" },
@@ -304,12 +305,12 @@ export default function Home() {
               <motion.div
                 key={idx}
                 whileHover={{ x: 5 }}
-                className="bg-white/5 border border-white/10 p-8 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white/5 border border-white/10 p-6 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="flex items-center gap-4">
-                  <Award className={`w-6 h-6 ${item.color}`} />
-                  <h3 className="text-lg text-white font-bold font-mono">{item.cert}</h3>
+                <div className="flex items-start gap-3">
+                  <Award className={`w-5 h-5 ${item.color} flex-shrink-0 mt-0.5`} />
+                  <h3 className="text-base text-white font-bold font-mono leading-snug">{item.cert}</h3>
                 </div>
               </motion.div>
             ))}
