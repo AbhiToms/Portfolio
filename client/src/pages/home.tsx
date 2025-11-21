@@ -38,11 +38,11 @@ export default function Home() {
       const cycle = (now % 12000) / 12000;
       let percent;
       if (cycle < 0.5) {
-        percent = Math.round(cycle * 200);
+        percent = cycle * 200;
       } else {
-        percent = Math.round((1 - cycle) * 200);
+        percent = (1 - cycle) * 200;
       }
-      setScanPercent(Math.min(100, Math.max(0, percent)));
+      setScanPercent(Math.floor(Math.min(100, Math.max(0, percent))));
     }, 16);
     return () => clearInterval(interval);
   }, []);
