@@ -312,7 +312,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { cert: "CEH v12", color: "text-primary" },
+              { cert: "Certified Ethical Hacker v12", color: "text-primary" },
               { cert: "Adv. Diploma Cyber Defence", color: "text-secondary" },
               { cert: "Certified Penetration Tester", color: "text-accent" },
               { cert: "Network Defense Essentials", color: "text-primary" }
