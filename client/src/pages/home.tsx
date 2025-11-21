@@ -60,15 +60,15 @@ export default function Home() {
           </div>
           
           <div className="hidden md:flex items-center gap-8 font-mono text-sm text-muted-foreground">
-            <span className="hover:text-primary cursor-pointer transition-colors">01_HOME</span>
-            <span className="hover:text-primary cursor-pointer transition-colors">02_VECTORS</span>
-            <span className="hover:text-primary cursor-pointer transition-colors">03_ABOUT</span>
+            <a href="#hero" className="hover:text-primary cursor-pointer transition-colors">01_HOME</a>
+            <a href="#modules" className="hover:text-primary cursor-pointer transition-colors">02_VECTORS</a>
+            <a href="#about" className="hover:text-primary cursor-pointer transition-colors">03_ABOUT</a>
             <span className="text-accent">STATUS: ONLINE</span>
           </div>
         </header>
 
         {/* Hero Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative">
+        <section id="hero" className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative">
           <div className="hidden md:block absolute top-0 left-0 font-mono text-accent text-sm opacity-50">/// SECTION_01_INITIALIZATION</div>
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase">
@@ -126,7 +126,7 @@ export default function Home() {
         </section>
 
         {/* Services / Modules */}
-        <section className="space-y-12">
+        <section id="modules" className="space-y-12">
           <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
               <h2 className="text-3xl text-white mb-2">ACTIVE MODULES</h2>
@@ -191,7 +191,7 @@ export default function Home() {
         </section>
 
         {/* Experience / Education */}
-        <section className="space-y-12">
+        <section id="about" className="space-y-12">
            <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
               <h2 className="text-3xl text-white mb-2">SYSTEM LOGS</h2>
