@@ -36,9 +36,14 @@ export default function Home() {
     const interval = setInterval(() => {
       const now = Date.now();
       const cycle = (now % 6000) / 6000;
-      const percent = cycle < 0.5 ? Math.round(cycle * 200) : Math.round((1 - cycle) * 200);
-      setScanPercent(Math.max(0, Math.min(100, percent)));
-    }, 50);
+      let percent;
+      if (cycle < 0.5) {
+        percent = Math.round(cycle * 200);
+      } else {
+        percent = Math.round((1 - cycle) * 200);
+      }
+      setScanPercent(Math.min(100, Math.max(0, percent)));
+    }, 16);
     return () => clearInterval(interval);
   }, []);
 
