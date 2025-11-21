@@ -259,6 +259,26 @@ export default function Home() {
                   </p>
                 </div>
 
+                <div className="bg-white/5 border border-white/10 p-6 hover:border-secondary/50 transition-colors group">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-white font-bold">Higher Secondary (Commerce)</h4>
+                      <p className="text-secondary text-sm font-mono">Govt. Higher Secondary School, Kaniyanchal</p>
+                    </div>
+                    <Badge variant="outline" className="border-secondary/30 text-secondary bg-secondary/5">March 2020</Badge>
+                  </div>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 p-6 hover:border-secondary/50 transition-colors group">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-white font-bold">SSLC</h4>
+                      <p className="text-secondary text-sm font-mono">Govt. Higher Secondary School, Kaniyanchal</p>
+                    </div>
+                    <Badge variant="outline" className="border-secondary/30 text-secondary bg-secondary/5">March 2018</Badge>
+                  </div>
+                </div>
+
                 <div className="bg-white/5 border border-white/10 p-6 hover:border-accent/50 transition-colors group">
                    <div className="flex justify-between items-start mb-4">
                     <h4 className="text-white font-bold">Certifications</h4>
