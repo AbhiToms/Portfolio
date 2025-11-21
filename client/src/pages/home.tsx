@@ -39,11 +39,26 @@ export default function Home() {
       let percent;
       
       if (cycle < 10/19) {
-        percent = (cycle / (10/19)) * 100;
+        // Fill 0% to 100% with slowdown after 80%
+        if (cycle < 8/19) {
+          // 0-8s: Fill 0% → 80% (fast)
+          percent = (cycle / (8/19)) * 80;
+        } else {
+          // 8-10s: Fill 80% → 100% (slow)
+          percent = 80 + ((cycle - 8/19) / (2/19)) * 20;
+        }
       } else if (cycle < 14/19) {
+        // Reverse 100% → 50%
         percent = 100 - ((cycle - 10/19) / (4/19)) * 50;
       } else {
-        percent = 50 + ((cycle - 14/19) / (5/19)) * 50;
+        // Fill 50% to 100% with slowdown after 80%
+        if (cycle < 14/19 + 3/19) {
+          // 50-80% (fast)
+          percent = 50 + ((cycle - 14/19) / (3/19)) * 30;
+        } else {
+          // 80-100% (slow)
+          percent = 80 + ((cycle - (14/19 + 3/19)) / (2/19)) * 20;
+        }
       }
       
       setScanPercent(Math.floor(Math.min(100, Math.max(0, percent))));
