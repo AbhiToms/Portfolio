@@ -3,176 +3,217 @@ import { motion } from "framer-motion";
 import { 
   Terminal, 
   Shield, 
-  Bug, 
-  Network, 
+  Zap, 
+  Globe, 
   Lock, 
   Cpu, 
   ChevronRight, 
   ExternalLink, 
-  Skull, 
+  Eye, 
   Wifi,
   Activity,
-  Search
+  Search,
+  Code,
+  Database,
+  Layers
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
-const TypewriterEffect = ({ text, delay = 0 }: { text: string, delay?: number }) => {
-  const [displayedText, setDisplayedText] = useState("");
-  
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      let currentIndex = 0;
-      const interval = setInterval(() => {
-        if (currentIndex <= text.length) {
-          setDisplayedText(text.slice(0, currentIndex));
-          currentIndex++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 50); // Typing speed
-      return () => clearInterval(interval);
-    }, delay);
-    return () => clearTimeout(timeout);
-  }, [text, delay]);
-
-  return <span>{displayedText}</span>;
-};
+const CyberButton = ({ children, variant = "primary", className = "" }: { children: React.ReactNode, variant?: "primary" | "secondary", className?: string }) => (
+  <button className={`
+    relative px-8 py-4 font-display font-bold uppercase tracking-wider text-sm
+    transition-all duration-200 group
+    ${variant === "primary" 
+      ? "bg-primary/10 text-primary hover:bg-primary hover:text-black border border-primary/50" 
+      : "bg-secondary/10 text-secondary hover:bg-secondary hover:text-white border border-secondary/50"}
+    clip-path-slant
+    ${className}
+  `}>
+    <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-current opacity-50"></span>
+    <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-current opacity-50"></span>
+    {children}
+  </button>
+);
 
 export default function Home() {
-  const [command, setCommand] = useState("");
-
-  const handleCommandSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (command.trim() === "") return;
-    // Mock command handling
-    setCommand("");
-  };
-
   return (
-    <div className="min-h-screen p-4 md:p-8 max-w-7xl mx-auto flex flex-col gap-12 pb-24">
-      {/* Header */}
-      <motion.header 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex justify-between items-center border-b border-primary/30 pb-4"
-      >
-        <div className="flex items-center gap-2 text-sm md:text-base">
-          <Terminal className="w-5 h-5 text-primary animate-pulse" />
-          <span className="font-bold tracking-widest">ROOT ACCESS GRANTED</span>
-          <span className="inline-block w-2 h-4 bg-primary animate-cursor-blink ml-1"></span>
-        </div>
-        <div className="flex items-center gap-4 text-xs md:text-sm text-muted-foreground">
-          <span className="hidden md:inline">SYS.STATUS: <span className="text-primary">ONLINE</span></span>
-          <span>IP: 127.0.0.1</span>
-          <span>UPTIME: 99.99%</span>
-        </div>
-      </motion.header>
+    <div className="min-h-screen text-foreground overflow-hidden relative">
+      {/* Background Decoration */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[20%] right-[5%] w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+      </div>
 
-      {/* Hero Section */}
-      <section className="space-y-6 py-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <h1 className="text-4xl md:text-7xl font-black leading-none tracking-tighter mb-4 glow-text">
-            OFFENSIVE SECURITY <br />
-            <span className="text-muted-foreground opacity-50">//</span> RESEARCHER
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-light border-l-2 border-primary pl-4 py-2">
-            <TypewriterEffect text="Breaking systems to make them unbreakable." delay={1000} />
-          </p>
-        </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto p-6 md:p-12 flex flex-col gap-24">
         
-        <div className="flex gap-4 pt-4">
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-black font-bold px-8 py-6 h-auto text-lg transition-all hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
-            INITIATE_CONTACT
-          </Button>
-          <Button variant="ghost" className="text-muted-foreground hover:text-primary hover:bg-primary/10 px-8 py-6 h-auto text-lg">
-            VIEW_LOGS
-          </Button>
-        </div>
-      </section>
+        {/* Header / Nav */}
+        <header className="flex justify-between items-center py-4 border-b border-white/10">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-primary flex items-center justify-center text-black font-bold font-display text-lg">
+              CP
+            </div>
+            <span className="font-display text-xl tracking-widest text-white">CYBER<span className="text-primary">PUNK</span>_SEC</span>
+          </div>
+          
+          <div className="hidden md:flex items-center gap-8 font-mono text-sm text-muted-foreground">
+            <span className="hover:text-primary cursor-pointer transition-colors">01_HOME</span>
+            <span className="hover:text-primary cursor-pointer transition-colors">02_VECTORS</span>
+            <span className="hover:text-primary cursor-pointer transition-colors">03_ABOUT</span>
+            <span className="text-accent">STATUS: ONLINE</span>
+          </div>
+        </header>
 
+        {/* Hero Section */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase">
+              <Activity className="w-3 h-3" />
+              <span>System Breach Detected</span>
+            </div>
+            
+            <div className="relative">
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text" data-text="OFFENSIVE">
+                OFFENSIVE
+              </h1>
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text" data-text="SECURITY">
+                SECURITY
+              </h1>
+            </div>
+            
+            <p className="text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-6">
+              Penetration testing and vulnerability research for the decentralized web. 
+              <span className="text-white font-bold"> Break the loop.</span>
+            </p>
 
-      {/* Services (Attack Vectors) */}
-      <section>
-        <div className="flex items-center gap-4 mb-8">
-          <h2 className="text-2xl font-bold text-primary">ATTACK_VECTORS</h2>
-          <Separator className="flex-1 bg-primary/30" />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { 
-              title: "Web App Pentesting", 
-              icon: Search,
-              desc: "Comprehensive vulnerability assessment of web applications following OWASP Top 10 methodology.",
-              tags: ["Burp Suite", "SQLi", "XSS"]
-            },
-            { 
-              title: "Network Security", 
-              icon: Wifi,
-              desc: "Internal and external infrastructure testing to identify misconfigurations and weak points.",
-              tags: ["Nmap", "Metasploit", "Active Directory"]
-            },
-            { 
-              title: "Smart Contract Auditing", 
-              icon: Lock,
-              desc: "Security analysis of EVM-based smart contracts to prevent reentrancy, overflows, and logic errors.",
-              tags: ["Solidity", "Ethers.js", "DeFi"]
-            }
-          ].map((service, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <Card className="bg-black border border-primary/20 h-full hover:border-primary transition-all hover:shadow-[0_0_10px_rgba(0,255,65,0.2)] group">
-                <CardHeader>
-                  <service.icon className="w-10 h-10 text-primary mb-4 group-hover:animate-bounce" />
-                  <CardTitle className="text-xl text-primary group-hover:text-white transition-colors">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {service.desc}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {service.tags.map(tag => (
-                      <Badge key={tag} variant="outline" className="border-primary/30 text-primary/70 bg-primary/5">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+            <div className="flex flex-wrap gap-4">
+              <CyberButton variant="primary">Initialize Protocol</CyberButton>
+              <CyberButton variant="secondary">Download Keys</CyberButton>
+            </div>
+          </div>
 
+          {/* Hero Visual / HUD */}
+          <div className="relative hidden lg:block h-[500px] w-full border border-white/10 bg-black/40 backdrop-blur-sm p-4 clip-path-slant-reverse">
+             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+             
+             {/* HUD Elements */}
+             <div className="absolute top-8 right-8 text-right font-mono text-xs text-primary space-y-1">
+               <div>COORDS: 34.291, -118.291</div>
+               <div>NET: SECURE</div>
+               <div>ENC: AES-256</div>
+             </div>
 
-      {/* Footer / CLI */}
-      <footer className="fixed bottom-0 left-0 w-full bg-black/90 backdrop-blur border-t border-primary/30 p-2 z-50">
-        <form onSubmit={handleCommandSubmit} className="max-w-7xl mx-auto flex items-center gap-2 text-sm md:text-base font-mono">
-          <span className="text-primary font-bold whitespace-nowrap">root@kali:~#</span>
-          <input 
-            type="text" 
-            value={command}
-            onChange={(e) => setCommand(e.target.value)}
-            className="bg-transparent border-none outline-none text-white w-full focus:ring-0 placeholder:text-muted-foreground/50"
-            placeholder="enter command..."
-            autoFocus
-          />
-        </form>
-      </footer>
+             <div className="absolute bottom-8 left-8 font-mono text-xs text-secondary">
+               <div className="flex items-center gap-2 mb-2">
+                 <div className="w-2 h-2 bg-secondary rounded-full animate-ping"></div>
+                 SCANNING TARGETS...
+               </div>
+               <div className="w-48 h-1 bg-white/10 overflow-hidden">
+                 <div className="h-full bg-secondary w-[60%] animate-pulse"></div>
+               </div>
+             </div>
+
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-primary/30 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
+               <div className="w-48 h-48 border border-secondary/30 rounded-full border-dashed"></div>
+             </div>
+          </div>
+        </section>
+
+        {/* Services / Modules */}
+        <section className="space-y-12">
+          <div className="flex items-end justify-between border-b border-white/10 pb-4">
+            <div>
+              <h2 className="text-3xl text-white mb-2">ACTIVE MODULES</h2>
+              <p className="text-muted-foreground font-mono text-sm">/// SELECT_ATTACK_VECTOR</p>
+            </div>
+            <div className="font-mono text-accent text-xl">03</div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "WEB_INFILTRATION",
+                icon: Globe,
+                desc: "Full stack penetration testing. Identifying critical vulnerabilities in web applications before they can be exploited.",
+                color: "text-primary",
+                border: "border-primary/20 hover:border-primary"
+              },
+              {
+                title: "NETWORK_BREACH",
+                icon: Wifi,
+                desc: "Internal and external infrastructure assessment. Mapping attack surfaces and securing entry points.",
+                color: "text-secondary",
+                border: "border-secondary/20 hover:border-secondary"
+              },
+              {
+                title: "CONTRACT_AUDIT",
+                icon: Code,
+                desc: "Smart contract security analysis. ensuring logic integrity and gas optimization for decentralized protocols.",
+                color: "text-accent",
+                border: "border-accent/20 hover:border-accent"
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -5 }}
+                className={`
+                  relative bg-card p-8 border ${item.border} transition-colors duration-300
+                  before:absolute before:top-0 before:left-0 before:w-full before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
+                `}
+              >
+                <div className={`w-12 h-12 mb-6 ${item.color} bg-white/5 flex items-center justify-center rounded-sm`}>
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h3 className={`text-xl font-bold mb-4 ${item.color} tracking-wider`}>{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed font-mono mb-6">
+                  {item.desc}
+                </p>
+                <div className="flex items-center gap-2 text-xs font-mono uppercase text-white/50 hover:text-white transition-colors cursor-pointer group">
+                  <span>Deploy Module</span>
+                  <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="border-t border-white/10 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 font-mono text-sm">
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="text-white mb-4 text-lg font-display">CYBERPUNK_SEC</h4>
+            <p className="text-muted-foreground max-w-xs">
+              Advanced security solutions for a dystopian future. 
+              Protecting your digital assets in the sprawl.
+            </p>
+          </div>
+          
+          <div>
+            <h4 className="text-primary mb-4">LINKS</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="hover:text-white cursor-pointer">GitHub</li>
+              <li className="hover:text-white cursor-pointer">HackerOne</li>
+              <li className="hover:text-white cursor-pointer">Twitter / X</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-secondary mb-4">CONTACT</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>root@cyberpunk.sec</li>
+              <li>PGP: 0x1337BEEF</li>
+              <li>
+                 <div className="flex items-center gap-2 mt-4">
+                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                   <span className="text-green-500">SYSTEM OPERATIONAL</span>
+                 </div>
+              </li>
+            </ul>
+          </div>
+        </footer>
+
+      </div>
     </div>
   );
 }
