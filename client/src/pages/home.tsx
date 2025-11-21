@@ -85,7 +85,7 @@ export default function Home() {
             </div>
             
             <p className="text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-6">
-              Security Researcher specializing in VAPT, Web App Security, and Malware Analysis.
+              Cybersecurity researcher with hands-on experience in ethical hacking, penetration testing, and vulnerability assessments.
               <span className="text-white font-bold"> Break the loop.</span>
             </p>
 
@@ -137,9 +137,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "VAPT",
+                title: "ETHICAL_HACKING",
                 icon: Shield,
-                desc: "Vulnerability Assessment & Penetration Testing. Systematic review of security weaknesses in information systems.",
+                desc: "Vulnerability Assessment & Penetration Testing (VAPT). Systematic review of security weaknesses.",
                 color: "text-primary",
                 border: "border-primary/20 hover:border-primary"
               },
@@ -151,16 +151,16 @@ export default function Home() {
                 border: "border-secondary/20 hover:border-secondary"
               },
               {
-                title: "MALWARE_ANALYSIS",
-                icon: Code,
-                desc: "Dissecting malicious software to understand its behavior, origin, and impact on systems.",
+                title: "SOC_MONITORING",
+                icon: Activity,
+                desc: "Incident response, log analysis (Splunk/Wazuh), and threat detection in real-time environments.",
                 color: "text-accent",
                 border: "border-accent/20 hover:border-accent"
               },
               {
-                title: "MOBILE_SEC",
-                icon: Zap,
-                desc: "Security testing for iOS and Android applications, identifying insecure storage and API vulnerabilities.",
+                title: "MALWARE_ANALYSIS",
+                icon: Code,
+                desc: "Dissecting malicious software to understand behavior and impact on systems.",
                 color: "text-primary",
                 border: "border-primary/20 hover:border-primary"
               }
@@ -194,7 +194,7 @@ export default function Home() {
            <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
               <h2 className="text-3xl text-white mb-2">SYSTEM LOGS</h2>
-              <p className="text-muted-foreground font-mono text-sm">/// EXPERIENCE_&_EDUCATION</p>
+              <p className="text-muted-foreground font-mono text-sm">/// ACADEMIC_&_PROJECT_HISTORY</p>
             </div>
             <div className="font-mono text-accent text-xl">03</div>
           </div>
@@ -203,31 +203,37 @@ export default function Home() {
             <div className="space-y-8">
               <h3 className="text-xl text-primary font-display tracking-wider mb-6 flex items-center gap-2">
                 <Terminal className="w-5 h-5" />
-                CAREER_HISTORY
+                PROJECTS_KERNEL
               </h3>
               
               <div className="relative border-l border-white/10 pl-8 space-y-12 ml-2">
-                {/* Timeline Item 1 */}
+                {/* Project 1 */}
                 <div className="relative group">
                   <div className="absolute -left-[37px] top-0 w-4 h-4 bg-primary rounded-full border-4 border-black group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_var(--color-primary)]"></div>
-                  <span className="text-xs font-mono text-primary mb-1 block">2023 - PRESENT</span>
-                  <h4 className="text-xl text-white font-bold mb-1">Security Researcher</h4>
-                  <p className="text-sm text-muted-foreground font-mono mb-4">Freelance / Independent</p>
+                  <h4 className="text-xl text-white font-bold mb-1">Automated AI Web Scanner</h4>
+                  <p className="text-sm text-muted-foreground font-mono mb-2">Python, Requests, BeautifulSoup</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    Conducting vulnerability assessments and penetration testing for web applications and critical infrastructure. 
-                    Specializing in identifying zero-day vulnerabilities and securing decentralized applications.
+                    Developed a command-line scanner using AI assistance to detect XSS, SQL Injection, and CSRF vulnerabilities. Implemented input fuzzing and payload injection with clean reporting.
                   </p>
                 </div>
 
-                {/* Timeline Item 2 */}
+                {/* Project 2 */}
                 <div className="relative group">
                   <div className="absolute -left-[37px] top-0 w-4 h-4 bg-white/20 rounded-full border-4 border-black group-hover:bg-secondary group-hover:shadow-[0_0_10px_var(--color-secondary)] transition-all duration-300"></div>
-                  <span className="text-xs font-mono text-muted-foreground mb-1 block">2021 - 2023</span>
-                  <h4 className="text-xl text-white font-bold mb-1">Penetration Tester</h4>
-                  <p className="text-sm text-muted-foreground font-mono mb-4">Previous Company / Role</p>
+                  <h4 className="text-xl text-white font-bold mb-1">SOC Log Analysis</h4>
+                  <p className="text-sm text-muted-foreground font-mono mb-2">Splunk, Windows Event Logs</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    Performed network and web application security audits. 
-                    Collaborated with development teams to patch critical vulnerabilities and implement secure coding practices.
+                    Configured a simulated SOC environment using Splunk. Analyzed system logs to detect brute-force attacks, privilege escalation, and lateral movement.
+                  </p>
+                </div>
+
+                {/* Project 3 */}
+                <div className="relative group">
+                  <div className="absolute -left-[37px] top-0 w-4 h-4 bg-white/20 rounded-full border-4 border-black group-hover:bg-accent group-hover:shadow-[0_0_10px_var(--color-accent)] transition-all duration-300"></div>
+                  <h4 className="text-xl text-white font-bold mb-1">Vulnerable Lab Setup</h4>
+                  <p className="text-sm text-muted-foreground font-mono mb-2">Kali Linux, Metasploitable2, Nmap</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Built an isolated lab with attacker/victim VMs. Conducted port scanning, OS fingerprinting, and analyzed network traffic for suspicious patterns.
                   </p>
                 </div>
               </div>
@@ -236,21 +242,20 @@ export default function Home() {
             <div className="space-y-8">
               <h3 className="text-xl text-secondary font-display tracking-wider mb-6 flex items-center gap-2">
                 <Cpu className="w-5 h-5" />
-                ACADEMIC_KERNEL
+                ACADEMIC_DATA
               </h3>
               
               <div className="space-y-6">
                 <div className="bg-white/5 border border-white/10 p-6 hover:border-secondary/50 transition-colors group">
                   <div className="flex justify-between items-start mb-2">
                     <div>
-                      <h4 className="text-white font-bold">Bachelor of Technology</h4>
-                      <p className="text-secondary text-sm font-mono">Computer Science & Engineering</p>
+                      <h4 className="text-white font-bold">B.Sc. Digital & Cyber Forensic Science</h4>
+                      <p className="text-secondary text-sm font-mono">Srinivas University, Mangalore</p>
                     </div>
-                    <Badge variant="outline" className="border-secondary/30 text-secondary bg-secondary/5">GRADUATED</Badge>
+                    <Badge variant="outline" className="border-secondary/30 text-secondary bg-secondary/5">2023 - Present</Badge>
                   </div>
                   <p className="text-muted-foreground text-sm mt-4">
-                    Specialized in Cybersecurity and Network Defense.
-                    <br/>Active member of the university CTF team.
+                    Focusing on digital forensics, cyber defense, and security analysis.
                   </p>
                 </div>
 
@@ -260,12 +265,29 @@ export default function Home() {
                     <Award className="w-5 h-5 text-accent" />
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {["CEH", "OSCP", "Comptia Security+", "AWS Security"].map(cert => (
+                    {["CEH v12", "Adv. Diploma Cyber Defence", "Certified Penetration Tester", "Network Defense Essentials"].map(cert => (
                       <Badge key={cert} variant="secondary" className="bg-black border border-white/20 text-muted-foreground hover:text-white hover:border-white transition-colors">
                         {cert}
                       </Badge>
                     ))}
                   </div>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 p-6 hover:border-primary/50 transition-colors group">
+                   <div className="flex justify-between items-start mb-4">
+                    <h4 className="text-white font-bold">Achievements</h4>
+                    <Activity className="w-5 h-5 text-primary" />
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1 h-1 bg-primary rounded-full"></span>
+                      HackTheBox – Hacker Rank
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1 h-1 bg-primary rounded-full"></span>
+                      TryHackMe – Top 2% Global Rank
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -295,8 +317,9 @@ export default function Home() {
           <div>
             <h4 className="text-secondary mb-4">CONTACT</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li>contact@abhinavthomas.com</li>
-              <li>PGP: 0x1337BEEF</li>
+              <li>abhinavthomas15@gmail.com</li>
+              <li>+91 9496396882</li>
+              <li>Kannur, Kerala, India</li>
               <li>
                  <div className="flex items-center gap-2 mt-4">
                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
