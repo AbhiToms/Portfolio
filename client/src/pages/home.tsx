@@ -68,8 +68,8 @@ export default function Home() {
         </header>
 
         {/* Hero Section */}
-        <section id="hero" className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative pt-8 md:pt-0">
-          <div className="hidden md:block absolute -top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_01_INITIALIZATION</div>
+        <section id="hero" className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative pt-10 md:pt-0">
+          <div className="absolute -top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_01_INITIALIZATION</div>
           <div className="space-y-6 md:space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase">
               <Activity className="w-3 h-3" />
