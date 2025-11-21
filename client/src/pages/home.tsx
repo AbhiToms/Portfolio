@@ -81,7 +81,16 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <CyberButton variant="primary">Initialize Protocol</CyberButton>
+              <button onClick={() => document.getElementById('modules')?.scrollIntoView({ behavior: 'smooth' })} className={`
+                relative px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-display font-bold uppercase tracking-wider text-xs sm:text-sm
+                transition-all duration-200 group
+                bg-primary/10 text-primary hover:bg-primary hover:text-black border border-primary/50
+                clip-path-slant
+              `}>
+                <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-current opacity-50"></span>
+                <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-current opacity-50"></span>
+                Initialize Protocol
+              </button>
               <a href="https://www.linkedin.com/in/abhitoms" target="_blank" rel="noreferrer">
                 <CyberButton variant="secondary">Connect on LinkedIn</CyberButton>
               </a>
