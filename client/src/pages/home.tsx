@@ -15,7 +15,8 @@ import {
   Search,
   Code,
   Database,
-  Layers
+  Layers,
+  Award
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -188,7 +189,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Experience / Education Placeholder */}
+        {/* Experience / Education */}
         <section className="space-y-12">
            <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
@@ -198,25 +199,75 @@ export default function Home() {
             <div className="font-mono text-accent text-xl">03</div>
           </div>
 
-          <div className="space-y-6">
-            <div className="border-l-2 border-primary/30 pl-8 relative">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_var(--color-primary)]"></div>
-              <h3 className="text-2xl text-white font-display">SECURITY RESEARCHER</h3>
-              <p className="text-primary font-mono text-sm mb-2">CURRENT_ROLE // PRESENT</p>
-              <p className="text-muted-foreground max-w-2xl">
-                Conducting advanced vulnerability assessments and penetration testing for diverse clients. 
-                Specializing in web application security and malware analysis.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <h3 className="text-xl text-primary font-display tracking-wider mb-6 flex items-center gap-2">
+                <Terminal className="w-5 h-5" />
+                CAREER_HISTORY
+              </h3>
+              
+              <div className="relative border-l border-white/10 pl-8 space-y-12 ml-2">
+                {/* Timeline Item 1 */}
+                <div className="relative group">
+                  <div className="absolute -left-[37px] top-0 w-4 h-4 bg-primary rounded-full border-4 border-black group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_var(--color-primary)]"></div>
+                  <span className="text-xs font-mono text-primary mb-1 block">2023 - PRESENT</span>
+                  <h4 className="text-xl text-white font-bold mb-1">Security Researcher</h4>
+                  <p className="text-sm text-muted-foreground font-mono mb-4">Freelance / Independent</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Conducting vulnerability assessments and penetration testing for web applications and critical infrastructure. 
+                    Specializing in identifying zero-day vulnerabilities and securing decentralized applications.
+                  </p>
+                </div>
+
+                {/* Timeline Item 2 */}
+                <div className="relative group">
+                  <div className="absolute -left-[37px] top-0 w-4 h-4 bg-white/20 rounded-full border-4 border-black group-hover:bg-secondary group-hover:shadow-[0_0_10px_var(--color-secondary)] transition-all duration-300"></div>
+                  <span className="text-xs font-mono text-muted-foreground mb-1 block">2021 - 2023</span>
+                  <h4 className="text-xl text-white font-bold mb-1">Penetration Tester</h4>
+                  <p className="text-sm text-muted-foreground font-mono mb-4">Previous Company / Role</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Performed network and web application security audits. 
+                    Collaborated with development teams to patch critical vulnerabilities and implement secure coding practices.
+                  </p>
+                </div>
+              </div>
             </div>
 
-             <div className="border-l-2 border-secondary/30 pl-8 relative">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 bg-secondary rounded-full shadow-[0_0_10px_var(--color-secondary)]"></div>
-              <h3 className="text-2xl text-white font-display">EDUCATION / CERTIFICATION</h3>
-              <p className="text-secondary font-mono text-sm mb-2">ACADEMIC_RECORD</p>
-              <p className="text-muted-foreground max-w-2xl">
-                Focus on Computer Science and Cybersecurity. 
-                (Add your specific degree or university here)
-              </p>
+            <div className="space-y-8">
+              <h3 className="text-xl text-secondary font-display tracking-wider mb-6 flex items-center gap-2">
+                <Cpu className="w-5 h-5" />
+                ACADEMIC_KERNEL
+              </h3>
+              
+              <div className="space-y-6">
+                <div className="bg-white/5 border border-white/10 p-6 hover:border-secondary/50 transition-colors group">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-white font-bold">Bachelor of Technology</h4>
+                      <p className="text-secondary text-sm font-mono">Computer Science & Engineering</p>
+                    </div>
+                    <Badge variant="outline" className="border-secondary/30 text-secondary bg-secondary/5">GRADUATED</Badge>
+                  </div>
+                  <p className="text-muted-foreground text-sm mt-4">
+                    Specialized in Cybersecurity and Network Defense.
+                    <br/>Active member of the university CTF team.
+                  </p>
+                </div>
+
+                <div className="bg-white/5 border border-white/10 p-6 hover:border-accent/50 transition-colors group">
+                   <div className="flex justify-between items-start mb-4">
+                    <h4 className="text-white font-bold">Certifications</h4>
+                    <Award className="w-5 h-5 text-accent" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {["CEH", "OSCP", "Comptia Security+", "AWS Security"].map(cert => (
+                      <Badge key={cert} variant="secondary" className="bg-black border border-white/20 text-muted-foreground hover:text-white hover:border-white transition-colors">
+                        {cert}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
