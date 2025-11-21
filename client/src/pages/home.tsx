@@ -116,7 +116,8 @@ export default function Home() {
         </section>
 
         {/* Services / Modules */}
-        <section id="modules" className="space-y-12">
+        <section id="modules" className="space-y-12 relative pt-8">
+          <div className="absolute -top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_02_VECTORS</div>
           <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
               <h2 className="text-3xl text-white mb-2">ACTIVE MODULES</h2>
@@ -188,7 +189,8 @@ export default function Home() {
         </section>
 
         {/* Experience / Education */}
-        <section id="about" className="space-y-12">
+        <section id="about" className="space-y-12 relative pt-8">
+          <div className="absolute -top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_03_SYSTEM_LOGS</div>
            <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
               <h2 className="text-3xl text-white mb-2">SYSTEM LOGS</h2>
@@ -282,7 +284,8 @@ export default function Home() {
         </section>
 
         {/* Certifications Section */}
-        <section className="space-y-12">
+        <section className="space-y-12 relative pt-8">
+          <div className="absolute -top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_04_CREDENTIALS</div>
           <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
               <h2 className="text-3xl text-white mb-2">CREDENTIALS</h2>
@@ -315,7 +318,8 @@ export default function Home() {
         </section>
 
         {/* Achievements Section */}
-        <section className="space-y-12">
+        <section className="space-y-12 relative pt-8">
+          <div className="absolute -top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_05_SYSTEM_RANKINGS</div>
           <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div>
               <h2 className="text-3xl text-white mb-2">SYSTEM RANKINGS</h2>
@@ -348,7 +352,8 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/10 py-8 md:py-12 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 font-mono text-xs md:text-sm">
+        <footer className="border-t border-white/10 py-8 md:py-12 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 font-mono text-xs md:text-sm relative">
+          <div className="absolute -top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_06_TERMINUS</div>
           <div className="col-span-1 md:col-span-2">
             <h4 className="text-white mb-4 text-lg font-display">ABHINAV THOMAS</h4>
             <p className="text-muted-foreground max-w-xs">
