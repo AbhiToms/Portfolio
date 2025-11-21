@@ -131,7 +131,7 @@ export default function Home() {
                  SCANNING TARGETS... <span className="text-red-500 font-bold">{scanPercent}%</span>
                </div>
                <div className="w-48 h-1 bg-white/10 overflow-hidden">
-                 <div className="h-full bg-secondary animate-scan-fill"></div>
+                 <div className="h-full bg-secondary transition-all duration-100" style={{ width: `${scanPercent}%` }}></div>
                </div>
              </div>
 

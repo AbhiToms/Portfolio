@@ -157,13 +157,4 @@
     height: 100%;
   }
 
-  @keyframes scan-fill {
-    0% { width: 0%; }
-    50% { width: 100%; }
-    100% { width: 0%; }
-  }
-
-  .animate-scan-fill {
-    animation: scan-fill 20s linear infinite;
-  }
 }
