@@ -40,7 +40,7 @@ export default function Home() {
       if (cycle < 0.5) {
         percent = cycle * 200;
       } else {
-        percent = (1 - cycle) * 200;
+        percent = 100 - (cycle - 0.5) * 100;
       }
       setScanPercent(Math.floor(Math.min(100, Math.max(0, percent))));
     }, 16);
