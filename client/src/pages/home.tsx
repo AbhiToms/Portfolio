@@ -23,6 +23,22 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+const CyberButton = ({ children, variant = "primary", className = "" }: { children: React.ReactNode, variant?: "primary" | "secondary", className?: string }) => (
+  <button className={`
+    relative px-8 py-4 font-display font-bold uppercase tracking-wider text-sm
+    transition-all duration-200 group
+    ${variant === "primary" 
+      ? "bg-primary/10 text-primary hover:bg-primary hover:text-black border border-primary/50" 
+      : "bg-secondary/10 text-secondary hover:bg-secondary hover:text-white border border-secondary/50"}
+    clip-path-slant
+    ${className}
+  `}>
+    <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-current opacity-50"></span>
+    <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-current opacity-50"></span>
+    {children}
+  </button>
+);
+
 const ScrambleText = ({ text, className = "" }: { text: string, className?: string }) => {
   const [displayText, setDisplayText] = useState(text);
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
