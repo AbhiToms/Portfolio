@@ -23,47 +23,66 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const CyberButton = ({ children, variant = "primary", className = "" }: { children: React.ReactNode, variant?: "primary" | "secondary", className?: string }) => (
-  <button className={`
-    relative px-8 py-4 font-display font-bold uppercase tracking-wider text-sm
-    transition-all duration-200 group
-    ${variant === "primary" 
-      ? "bg-primary/10 text-primary hover:bg-primary hover:text-black border border-primary/50" 
-      : "bg-secondary/10 text-secondary hover:bg-secondary hover:text-white border border-secondary/50"}
-    clip-path-slant
-    ${className}
-  `}>
-    <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-current opacity-50"></span>
-    <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-current opacity-50"></span>
-    {children}
-  </button>
-);
+const ScrambleText = ({ text, className = "" }: { text: string, className?: string }) => {
+  const [displayText, setDisplayText] = useState(text);
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+  const scramble = () => {
+    let iteration = 0;
+    const interval = setInterval(() => {
+      setDisplayText(prev => 
+        text
+          .split("")
+          .map((letter, index) => {
+            if (index < iteration) return text[index];
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join("")
+      );
+
+      if (iteration >= text.length) clearInterval(interval);
+      iteration += 1 / 3;
+    }, 30);
+  };
+
+  return (
+    <span 
+      onMouseEnter={scramble} 
+      className={`inline-block cursor-default ${className}`}
+    >
+      {displayText}
+    </span>
+  );
+};
 
 export default function Home() {
   return (
     <div className="min-h-screen text-foreground overflow-hidden relative">
       {/* Background Decoration */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[20%] right-[5%] w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-[20%] right-[5%] w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto p-6 md:p-12 flex flex-col gap-24">
         
         {/* Header / Nav */}
         <header className="flex justify-between items-center py-4 border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary flex items-center justify-center text-black font-bold font-display text-lg">
+          <div className="flex items-center gap-2 group cursor-pointer">
+            <div className="w-8 h-8 bg-primary flex items-center justify-center text-black font-bold font-display text-lg group-hover:animate-spin">
               AT
             </div>
-            <span className="font-display text-xl tracking-widest text-white">ABHINAV<span className="text-primary">THOMAS</span></span>
+            <span className="font-display text-xl tracking-widest text-white group-hover:text-primary transition-colors">
+              <ScrambleText text="ABHINAV" />
+              <span className="text-primary"><ScrambleText text="THOMAS" /></span>
+            </span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 font-mono text-sm text-muted-foreground">
-            <span className="hover:text-primary cursor-pointer transition-colors">01_HOME</span>
-            <span className="hover:text-primary cursor-pointer transition-colors">02_VECTORS</span>
-            <span className="hover:text-primary cursor-pointer transition-colors">03_ABOUT</span>
-            <span className="text-accent">STATUS: ONLINE</span>
+            <span className="hover:text-primary cursor-pointer transition-colors hover:glitch-hover">01_HOME</span>
+            <span className="hover:text-primary cursor-pointer transition-colors hover:glitch-hover">02_VECTORS</span>
+            <span className="hover:text-primary cursor-pointer transition-colors hover:glitch-hover">03_ABOUT</span>
+            <span className="text-accent animate-pulse">STATUS: ONLINE</span>
           </div>
         </header>
 
@@ -184,6 +203,7 @@ export default function Home() {
                   <span>Deploy Module</span>
                   <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </div>
+                <div className="scanner-line"></div>
               </motion.div>
             ))}
           </div>
