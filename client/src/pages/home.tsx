@@ -298,7 +298,8 @@ export default function Home() {
               { cert: "Certified Ethical Hacker v12", color: "text-primary" },
               { cert: "Adv. Diploma Cyber Defence", color: "text-secondary" },
               { cert: "Certified Penetration Tester", color: "text-accent" },
-              { cert: "Network Defense Essentials", color: "text-primary" }
+              { cert: "Network Defense Essentials", color: "text-primary" },
+              { cert: "Certified Cybersecurity Educator Professional", color: "text-secondary" }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
