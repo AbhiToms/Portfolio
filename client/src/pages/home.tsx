@@ -279,20 +279,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="bg-white/5 border border-white/10 p-6 hover:border-accent/50 transition-colors group">
-                   <div className="flex justify-between items-start mb-4">
-                    <h4 className="text-white font-bold">Certifications</h4>
-                    <Award className="w-5 h-5 text-accent" />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {["CEH v12", "Adv. Diploma Cyber Defence", "Certified Penetration Tester", "Network Defense Essentials"].map(cert => (
-                      <Badge key={cert} variant="secondary" className="bg-black border border-white/20 text-muted-foreground hover:text-white hover:border-white transition-colors">
-                        {cert}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
                 <div className="bg-white/5 border border-white/10 p-6 hover:border-primary/50 transition-colors group">
                    <div className="flex justify-between items-start mb-4">
                     <h4 className="text-white font-bold">Achievements</h4>
@@ -311,6 +297,38 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Certifications Section */}
+        <section className="space-y-12">
+          <div className="flex items-end justify-between border-b border-white/10 pb-4">
+            <div>
+              <h2 className="text-3xl text-white mb-2">CREDENTIALS</h2>
+              <p className="text-muted-foreground font-mono text-sm">/// PROFESSIONAL_CERTIFICATIONS</p>
+            </div>
+            <div className="font-mono text-accent text-xl">04</div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { cert: "CEH v12", color: "text-primary" },
+              { cert: "Adv. Diploma Cyber Defence", color: "text-secondary" },
+              { cert: "Certified Penetration Tester", color: "text-accent" },
+              { cert: "Network Defense Essentials", color: "text-primary" }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ x: 5 }}
+                className="bg-white/5 border border-white/10 p-8 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="flex items-center gap-4">
+                  <Award className={`w-6 h-6 ${item.color}`} />
+                  <h3 className="text-lg text-white font-bold font-mono">{item.cert}</h3>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
 
