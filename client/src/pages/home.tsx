@@ -39,90 +39,54 @@ const CyberButton = ({ children, variant = "primary", className = "" }: { childr
   </button>
 );
 
-const ScrambleText = ({ text, className = "" }: { text: string, className?: string }) => {
-  const [displayText, setDisplayText] = useState(text);
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
-
-  const scramble = () => {
-    let iteration = 0;
-    const interval = setInterval(() => {
-      setDisplayText(prev => 
-        text
-          .split("")
-          .map((letter, index) => {
-            if (index < iteration) return text[index];
-            return chars[Math.floor(Math.random() * chars.length)];
-          })
-          .join("")
-      );
-
-      if (iteration >= text.length) clearInterval(interval);
-      iteration += 1 / 3;
-    }, 30);
-  };
-
-  return (
-    <span 
-      onMouseEnter={scramble} 
-      className={`inline-block cursor-default ${className}`}
-    >
-      {displayText}
-    </span>
-  );
-};
-
 export default function Home() {
   return (
     <div className="min-h-screen text-foreground overflow-hidden relative">
       {/* Background Decoration */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-[20%] right-[5%] w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[20%] right-[5%] w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto p-6 md:p-12 flex flex-col gap-24">
         
         {/* Header / Nav */}
         <header className="flex justify-between items-center py-4 border-b border-white/10">
-          <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-8 h-8 bg-primary flex items-center justify-center text-black font-bold font-display text-lg group-hover:animate-spin">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-primary flex items-center justify-center text-black font-bold font-display text-lg">
               AT
             </div>
-            <span className="font-display text-xl tracking-widest text-white group-hover:text-primary transition-colors">
-              <ScrambleText text="ABHINAV" />
-              <span className="text-primary"><ScrambleText text="THOMAS" /></span>
-            </span>
+            <span className="font-display text-xl tracking-widest text-white">ABHINAV<span className="text-primary">THOMAS</span></span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 font-mono text-sm text-muted-foreground">
-            <span className="hover:text-primary cursor-pointer transition-colors hover:glitch-hover">01_HOME</span>
-            <span className="hover:text-primary cursor-pointer transition-colors hover:glitch-hover">02_VECTORS</span>
-            <span className="hover:text-primary cursor-pointer transition-colors hover:glitch-hover">03_ABOUT</span>
-            <span className="text-accent animate-pulse">STATUS: ONLINE</span>
+            <span className="hover:text-primary cursor-pointer transition-colors">01_HOME</span>
+            <span className="hover:text-primary cursor-pointer transition-colors">02_VECTORS</span>
+            <span className="hover:text-primary cursor-pointer transition-colors">03_ABOUT</span>
+            <span className="text-accent">STATUS: ONLINE</span>
           </div>
         </header>
 
         {/* Hero Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
-          <div className="scan-line-horizontal"></div>
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase pulse-border">
-              <Activity className="w-3 h-3 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase">
+              <Activity className="w-3 h-3" />
               <span>System Breach Detected</span>
             </div>
             
             <div className="relative">
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text neon-glow" data-text="ABHINAV">
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text" data-text="ABHINAV">
                 ABHINAV
               </h1>
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text color-shift" data-text="THOMAS">
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text" data-text="THOMAS">
                 THOMAS
               </h1>
             </div>
             
-            <p className="text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-6 neon-hover">
+            <p className="text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-6">
               Cybersecurity researcher with hands-on experience in ethical hacking, penetration testing, and vulnerability assessments.
-              <span className="text-white font-bold neon-glow"> Break the loop.</span>
+              <span className="text-white font-bold"> Break the loop.</span>
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -134,7 +98,7 @@ export default function Home() {
           </div>
 
           {/* Hero Visual / HUD */}
-          <div className="relative hidden lg:block h-[500px] w-full border border-white/10 bg-black/40 backdrop-blur-sm p-4 clip-path-slant-reverse pulse-border scanlines">
+          <div className="relative hidden lg:block h-[500px] w-full border border-white/10 bg-black/40 backdrop-blur-sm p-4 clip-path-slant-reverse">
              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
              
              {/* HUD Elements */}
@@ -220,7 +184,6 @@ export default function Home() {
                   <span>Deploy Module</span>
                   <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </div>
-                <div className="scanner-line"></div>
               </motion.div>
             ))}
           </div>
