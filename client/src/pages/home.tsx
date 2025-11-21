@@ -68,8 +68,8 @@ export default function Home() {
         </header>
 
         {/* Hero Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
-          <div className="absolute top-0 left-0 font-mono text-accent text-sm opacity-50">/// SECTION_01_INITIALIZATION</div>
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative">
+          <div className="hidden md:block absolute top-0 left-0 font-mono text-accent text-sm opacity-50">/// SECTION_01_INITIALIZATION</div>
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase">
               <Activity className="w-3 h-3" />
@@ -77,10 +77,10 @@ export default function Home() {
             </div>
             
             <div className="relative">
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text" data-text="ABHINAV">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text" data-text="ABHINAV">
                 ABHINAV
               </h1>
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text" data-text="THOMAS">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text" data-text="THOMAS">
                 THOMAS
               </h1>
             </div>
@@ -135,7 +135,7 @@ export default function Home() {
             <div className="font-mono text-accent text-xl">02</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             {[
               {
                 title: "ETHICAL_HACKING",
@@ -170,15 +170,15 @@ export default function Home() {
                 key={i}
                 whileHover={{ y: -5 }}
                 className={`
-                  relative bg-card p-8 border ${item.border} transition-colors duration-300
+                  relative bg-card p-6 md:p-8 border ${item.border} transition-colors duration-300
                   before:absolute before:top-0 before:left-0 before:w-full before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
                 `}
               >
-                <div className={`w-12 h-12 mb-6 ${item.color} bg-white/5 flex items-center justify-center rounded-sm`}>
-                  <item.icon className="w-6 h-6" />
+                <div className={`w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 ${item.color} bg-white/5 flex items-center justify-center rounded-sm`}>
+                  <item.icon className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h3 className={`text-xl font-bold mb-4 ${item.color} tracking-wider`}>{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-mono mb-6">
+                <h3 className={`text-lg md:text-xl font-bold mb-3 md:mb-4 ${item.color} tracking-wider`}>{item.title}</h3>
+                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed font-mono mb-4 md:mb-6">
                   {item.desc}
                 </p>
                 <div className="flex items-center gap-2 text-xs font-mono uppercase text-white/50 hover:text-white transition-colors cursor-pointer group">
@@ -200,14 +200,14 @@ export default function Home() {
             <div className="font-mono text-accent text-xl">03</div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <h3 className="text-xl text-primary font-display tracking-wider mb-6 flex items-center gap-2">
-                <Terminal className="w-5 h-5" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            <div className="space-y-6 md:space-y-8">
+              <h3 className="text-lg md:text-xl text-primary font-display tracking-wider mb-4 md:mb-6 flex items-center gap-2">
+                <Terminal className="w-4 h-4 md:w-5 md:h-5" />
                 PROJECTS_KERNEL
               </h3>
               
-              <div className="relative border-l border-white/10 pl-8 space-y-12 ml-2">
+              <div className="relative border-l border-white/10 pl-6 md:pl-8 space-y-8 md:space-y-12 ml-2">
                 {/* Project 1 */}
                 <div className="relative group">
                   <div className="absolute -left-[37px] top-0 w-4 h-4 bg-primary rounded-full border-4 border-black group-hover:scale-125 transition-transform duration-300 shadow-[0_0_10px_var(--color-primary)]"></div>
@@ -240,14 +240,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-8">
-              <h3 className="text-xl text-secondary font-display tracking-wider mb-6 flex items-center gap-2">
-                <Cpu className="w-5 h-5" />
+            <div className="space-y-6 md:space-y-8">
+              <h3 className="text-lg md:text-xl text-secondary font-display tracking-wider mb-4 md:mb-6 flex items-center gap-2">
+                <Cpu className="w-4 h-4 md:w-5 md:h-5" />
                 ACADEMIC_DATA
               </h3>
               
-              <div className="space-y-6">
-                <div className="bg-white/5 border border-white/10 p-6 hover:border-secondary/50 transition-colors group">
+              <div className="space-y-4 md:space-y-6">
+                <div className="bg-white/5 border border-white/10 p-4 md:p-6 hover:border-secondary/50 transition-colors group">
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="text-white font-bold">B.Sc. Digital & Cyber Forensic Science</h4>
@@ -294,7 +294,7 @@ export default function Home() {
             <div className="font-mono text-accent text-xl">04</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
               { cert: "Certified Ethical Hacker v12", color: "text-primary" },
               { cert: "Adv. Diploma Cyber Defence", color: "text-secondary" },
@@ -305,12 +305,12 @@ export default function Home() {
               <motion.div
                 key={idx}
                 whileHover={{ x: 5 }}
-                className="bg-white/5 border border-white/10 p-6 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white/5 border border-white/10 p-4 md:p-6 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="flex items-start gap-3">
-                  <Award className={`w-5 h-5 ${item.color} flex-shrink-0 mt-0.5`} />
-                  <h3 className="text-base text-white font-bold font-mono leading-snug">{item.cert}</h3>
+                <div className="flex items-start gap-2 md:gap-3">
+                  <Award className={`w-4 h-4 md:w-5 md:h-5 ${item.color} flex-shrink-0 mt-0.5`} />
+                  <h3 className="text-sm md:text-base text-white font-bold font-mono leading-snug">{item.cert}</h3>
                 </div>
               </motion.div>
             ))}
@@ -327,7 +327,7 @@ export default function Home() {
             <div className="font-mono text-accent text-xl">05</div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {[
               { title: "HackTheBox", rank: "Hacker Rank", icon: Zap, color: "text-primary" },
               { title: "TryHackMe", rank: "Top 2% Global", icon: Activity, color: "text-secondary" }
@@ -335,14 +335,14 @@ export default function Home() {
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white/5 border border-white/10 p-8 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
+                className="bg-white/5 border border-white/10 p-6 md:p-8 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10 flex items-start gap-4">
-                  <item.icon className={`w-8 h-8 ${item.color} flex-shrink-0 mt-1`} />
+                <div className="relative z-10 flex items-start gap-3 md:gap-4">
+                  <item.icon className={`w-6 h-6 md:w-8 md:h-8 ${item.color} flex-shrink-0 mt-1`} />
                   <div>
-                    <h3 className="text-xl text-white font-bold font-mono mb-2">{item.title}</h3>
-                    <p className={`text-lg font-bold ${item.color}`}>{item.rank}</p>
+                    <h3 className="text-lg md:text-xl text-white font-bold font-mono mb-1 md:mb-2">{item.title}</h3>
+                    <p className={`text-base md:text-lg font-bold ${item.color}`}>{item.rank}</p>
                   </div>
                 </div>
               </motion.div>
@@ -351,11 +351,11 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/10 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 font-mono text-sm">
+        <footer className="border-t border-white/10 py-8 md:py-12 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 font-mono text-xs md:text-sm">
           <div className="col-span-1 md:col-span-2">
             <h4 className="text-white mb-4 text-lg font-display">ABHINAV THOMAS</h4>
             <p className="text-muted-foreground max-w-xs">
-              Security Researcher specializing in VAPT, Web App Security, and Malware Analysis.
+              Security Researcher specializing in VAPT, SOC Analysis, Web App Security, and Malware Analysis.
             </p>
           </div>
           
