@@ -53,9 +53,9 @@ export default function Home() {
         <header className="flex justify-between items-center py-4 border-b border-white/10">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary flex items-center justify-center text-black font-bold font-display text-lg">
-              CP
+              AT
             </div>
-            <span className="font-display text-xl tracking-widest text-white">CYBER<span className="text-primary">PUNK</span>_SEC</span>
+            <span className="font-display text-xl tracking-widest text-white">ABHINAV<span className="text-primary">THOMAS</span></span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 font-mono text-sm text-muted-foreground">
@@ -75,16 +75,16 @@ export default function Home() {
             </div>
             
             <div className="relative">
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text" data-text="OFFENSIVE">
-                OFFENSIVE
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text" data-text="ABHINAV">
+                ABHINAV
               </h1>
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text" data-text="SECURITY">
-                SECURITY
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text" data-text="THOMAS">
+                THOMAS
               </h1>
             </div>
             
             <p className="text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-6">
-              Penetration testing and vulnerability research for the decentralized web. 
+              Security Researcher specializing in VAPT, Web App Security, and Malware Analysis.
               <span className="text-white font-bold"> Break the loop.</span>
             </p>
 
@@ -134,23 +134,23 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "WEB_INFILTRATION",
+                title: "VAPT_SERVICES",
                 icon: Globe,
-                desc: "Full stack penetration testing. Identifying critical vulnerabilities in web applications before they can be exploited.",
+                desc: "Comprehensive Vulnerability Assessment and Penetration Testing for critical infrastructure.",
                 color: "text-primary",
                 border: "border-primary/20 hover:border-primary"
               },
               {
-                title: "NETWORK_BREACH",
+                title: "WEB_&_MOBILE",
                 icon: Wifi,
-                desc: "Internal and external infrastructure assessment. Mapping attack surfaces and securing entry points.",
+                desc: "Securing web applications and mobile platforms against modern attack vectors and exploits.",
                 color: "text-secondary",
                 border: "border-secondary/20 hover:border-secondary"
               },
               {
-                title: "CONTRACT_AUDIT",
+                title: "MALWARE_ANALYSIS",
                 icon: Code,
-                desc: "Smart contract security analysis. ensuring logic integrity and gas optimization for decentralized protocols.",
+                desc: "Deep dive reverse engineering and analysis of malicious software artifacts and threats.",
                 color: "text-accent",
                 border: "border-accent/20 hover:border-accent"
               }
@@ -182,10 +182,9 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-white/10 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 font-mono text-sm">
           <div className="col-span-1 md:col-span-2">
-            <h4 className="text-white mb-4 text-lg font-display">CYBERPUNK_SEC</h4>
+            <h4 className="text-white mb-4 text-lg font-display">ABHINAV THOMAS</h4>
             <p className="text-muted-foreground max-w-xs">
-              Advanced security solutions for a dystopian future. 
-              Protecting your digital assets in the sprawl.
+              Security Researcher specializing in VAPT, Web App Security, and Malware Analysis.
             </p>
           </div>
           
@@ -193,7 +192,9 @@ export default function Home() {
             <h4 className="text-primary mb-4">LINKS</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li className="hover:text-white cursor-pointer">GitHub</li>
-              <li className="hover:text-white cursor-pointer">HackerOne</li>
+              <li className="hover:text-white cursor-pointer">
+                <a href="https://www.linkedin.com/in/abhitoms" target="_blank" rel="noreferrer">LinkedIn</a>
+              </li>
               <li className="hover:text-white cursor-pointer">Twitter / X</li>
             </ul>
           </div>
@@ -201,7 +202,7 @@ export default function Home() {
           <div>
             <h4 className="text-secondary mb-4">CONTACT</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li>root@cyberpunk.sec</li>
+              <li>contact@abhinavthomas.com</li>
               <li>PGP: 0x1337BEEF</li>
               <li>
                  <div className="flex items-center gap-2 mt-4">
