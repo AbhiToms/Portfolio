@@ -6,7 +6,6 @@ import {
   Globe, 
   Lock, 
   Cpu, 
-  ChevronRight, 
   Activity,
   Code,
   Award
@@ -184,13 +183,9 @@ export default function Home() {
                   <item.icon className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <h3 className={`text-lg md:text-xl font-bold mb-3 md:mb-4 ${item.color} tracking-wider`}>{item.title}</h3>
-                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed font-mono mb-4 md:mb-6">
+                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed font-mono">
                   {item.desc}
                 </p>
-                <div className="flex items-center gap-2 text-xs font-mono uppercase text-white/50 hover:text-white transition-colors cursor-pointer group">
-                  <span>Deploy Module</span>
-                  <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </div>
               </motion.div>
             ))}
           </div>
