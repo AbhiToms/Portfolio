@@ -363,7 +363,9 @@ export default function Home() {
           <div>
             <h4 className="text-primary mb-4">LINKS</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li className="hover:text-white cursor-pointer">GitHub</li>
+              <li className="hover:text-white cursor-pointer">
+                <a href="https://github.com/AbhiToms" target="_blank" rel="noreferrer">GitHub</a>
+              </li>
               <li className="hover:text-white cursor-pointer">
                 <a href="https://www.linkedin.com/in/abhitoms" target="_blank" rel="noreferrer">LinkedIn</a>
               </li>
