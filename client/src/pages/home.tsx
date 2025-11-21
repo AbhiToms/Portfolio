@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   Terminal, 
@@ -8,24 +7,15 @@ import {
   Lock, 
   Cpu, 
   ChevronRight, 
-  ExternalLink, 
-  Eye, 
-  Wifi,
   Activity,
-  Search,
   Code,
-  Database,
-  Layers,
   Award
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 const CyberButton = ({ children, variant = "primary", className = "" }: { children: React.ReactNode, variant?: "primary" | "secondary", className?: string }) => (
   <button className={`
-    relative px-8 py-4 font-display font-bold uppercase tracking-wider text-sm
+    relative px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-display font-bold uppercase tracking-wider text-xs sm:text-sm
     transition-all duration-200 group
     ${variant === "primary" 
       ? "bg-primary/10 text-primary hover:bg-primary hover:text-black border border-primary/50" 
@@ -48,10 +38,10 @@ export default function Home() {
         <div className="absolute bottom-[20%] right-[5%] w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto p-6 md:p-12 flex flex-col gap-24">
+      <div className="relative z-10 max-w-7xl mx-auto p-4 sm:p-6 md:p-12 flex flex-col gap-16 md:gap-24">
         
         {/* Header / Nav */}
-        <header className="flex justify-between items-center py-4 border-b border-white/10">
+        <header className="flex justify-between items-center py-3 md:py-4 border-b border-white/10">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary flex items-center justify-center text-black font-bold font-display text-lg">
               AT
@@ -85,7 +75,7 @@ export default function Home() {
               </h1>
             </div>
             
-            <p className="text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-6">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-4 md:pl-6">
               Cybersecurity researcher with hands-on experience in ethical hacking, penetration testing, and vulnerability assessments.
               <span className="text-white font-bold"> Break the loop.</span>
             </p>
