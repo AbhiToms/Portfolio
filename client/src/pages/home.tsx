@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   Terminal, 
@@ -29,6 +30,18 @@ const CyberButton = ({ children, variant = "primary", className = "" }: { childr
 );
 
 export default function Home() {
+  const [scanPercent, setScanPercent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = Date.now();
+      const cycle = (now % 6000) / 6000;
+      const percent = cycle < 0.5 ? Math.round(cycle * 200) : Math.round((1 - cycle) * 200);
+      setScanPercent(Math.max(0, Math.min(100, percent)));
+    }, 50);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen text-foreground overflow-hidden relative">
       {/* Background Decoration */}
@@ -110,7 +123,7 @@ export default function Home() {
              <div className="absolute bottom-8 left-8 font-mono text-xs text-secondary">
                <div className="flex items-center gap-2 mb-2">
                  <div className="w-2 h-2 bg-secondary rounded-full animate-ping"></div>
-                 SCANNING TARGETS...
+                 SCANNING TARGETS... <span className="text-red-500 font-bold">{scanPercent}%</span>
                </div>
                <div className="w-48 h-1 bg-white/10 overflow-hidden">
                  <div className="h-full bg-secondary animate-scan-fill"></div>
