@@ -103,25 +103,26 @@ export default function Home() {
         </header>
 
         {/* Hero Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
+          <div className="scan-line-horizontal"></div>
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase">
-              <Activity className="w-3 h-3" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase pulse-border">
+              <Activity className="w-3 h-3 animate-pulse" />
               <span>System Breach Detected</span>
             </div>
             
             <div className="relative">
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text" data-text="ABHINAV">
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-2 text-white glitch-text neon-glow" data-text="ABHINAV">
                 ABHINAV
               </h1>
-              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text" data-text="THOMAS">
+              <h1 className="text-6xl md:text-8xl font-black leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glitch-text color-shift" data-text="THOMAS">
                 THOMAS
               </h1>
             </div>
             
-            <p className="text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-6">
+            <p className="text-xl text-muted-foreground max-w-md font-light border-l-4 border-primary pl-6 neon-hover">
               Cybersecurity researcher with hands-on experience in ethical hacking, penetration testing, and vulnerability assessments.
-              <span className="text-white font-bold"> Break the loop.</span>
+              <span className="text-white font-bold neon-glow"> Break the loop.</span>
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -133,7 +134,7 @@ export default function Home() {
           </div>
 
           {/* Hero Visual / HUD */}
-          <div className="relative hidden lg:block h-[500px] w-full border border-white/10 bg-black/40 backdrop-blur-sm p-4 clip-path-slant-reverse">
+          <div className="relative hidden lg:block h-[500px] w-full border border-white/10 bg-black/40 backdrop-blur-sm p-4 clip-path-slant-reverse pulse-border scanlines">
              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
              
              {/* HUD Elements */}
