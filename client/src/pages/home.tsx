@@ -79,20 +79,20 @@ export default function Home() {
             <div className="w-8 h-8 bg-primary flex items-center justify-center text-black font-bold font-display text-lg">
               AT
             </div>
-            <span className="font-display text-xl tracking-widest text-white">ABHINAV<span className="text-primary">THOMAS</span></span>
+            <span className="font-display text-lg sm:text-xl tracking-widest text-white">ABHINAV<span className="text-primary">THOMAS</span></span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 font-mono text-sm text-muted-foreground">
-            <a href="#hero" className="hover:text-primary cursor-pointer transition-colors">01_HOME</a>
-            <a href="#modules" className="hover:text-primary cursor-pointer transition-colors">02_VECTORS</a>
-            <a href="#about" className="hover:text-primary cursor-pointer transition-colors">03_ABOUT</a>
+            <a href="#hero" data-testid="link-home" className="hover:text-primary cursor-pointer transition-colors">01_HOME</a>
+            <a href="#modules" data-testid="link-vectors" className="hover:text-primary cursor-pointer transition-colors">02_VECTORS</a>
+            <a href="#about" data-testid="link-about" className="hover:text-primary cursor-pointer transition-colors">03_ABOUT</a>
             <span className="text-accent">STATUS: ONLINE</span>
           </div>
         </header>
 
         {/* Hero Section */}
-        <section id="hero" className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative pt-10 md:pt-0">
-          <div className="absolute -top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_01_INITIALIZATION</div>
+        <section id="hero" className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative">
+          <div className="hidden sm:block absolute -top-6 md:-top-8 left-0 font-mono text-accent text-xs opacity-50">/// SECTION_01_INITIALIZATION</div>
           <div className="space-y-6 md:space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-accent/30 bg-accent/5 text-accent font-mono text-xs uppercase">
               <Activity className="w-3 h-3" />
@@ -113,8 +113,8 @@ export default function Home() {
               <span className="text-white font-bold"> Break the loop.</span>
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <button onClick={() => document.getElementById('modules')?.scrollIntoView({ behavior: 'smooth' })} className={`
+            <div className="flex flex-wrap gap-3 sm:gap-4">
+              <button data-testid="button-protocol" onClick={() => document.getElementById('modules')?.scrollIntoView({ behavior: 'smooth' })} className={`
                 relative px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-display font-bold uppercase tracking-wider text-xs sm:text-sm
                 transition-all duration-200 group
                 bg-primary/10 text-primary hover:bg-primary hover:text-black border border-primary/50
@@ -124,7 +124,7 @@ export default function Home() {
                 <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-current opacity-50"></span>
                 Initialize Protocol
               </button>
-              <a href="https://www.linkedin.com/in/abhitoms" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/abhitoms" target="_blank" rel="noreferrer" data-testid="link-linkedin">
                 <CyberButton variant="secondary">Connect on LinkedIn</CyberButton>
               </a>
             </div>
@@ -295,7 +295,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="bg-white/5 border border-white/10 p-6 hover:border-secondary/50 transition-colors group">
+                <div className="bg-white/5 border border-white/10 p-4 md:p-6 hover:border-secondary/50 transition-colors group">
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="text-white font-bold">Higher Secondary (Commerce)</h4>
@@ -305,7 +305,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="bg-white/5 border border-white/10 p-6 hover:border-secondary/50 transition-colors group">
+                <div className="bg-white/5 border border-white/10 p-4 md:p-6 hover:border-secondary/50 transition-colors group">
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h4 className="text-white font-bold">SSLC</h4>
@@ -398,12 +398,12 @@ export default function Home() {
             <h4 className="text-primary mb-4">LINKS</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li className="hover:text-white cursor-pointer">
-                <a href="https://github.com/AbhiToms" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://github.com/AbhiToms" target="_blank" rel="noreferrer" data-testid="link-github">GitHub</a>
               </li>
               <li className="hover:text-white cursor-pointer">
-                <a href="https://www.linkedin.com/in/abhitoms" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/abhitoms" target="_blank" rel="noreferrer" data-testid="link-linkedin-footer">LinkedIn</a>
               </li>
-              <li className="hover:text-white cursor-pointer">Twitter / X</li>
+              <li className="hover:text-white cursor-pointer" data-testid="link-twitter">Twitter / X</li>
             </ul>
           </div>
           
